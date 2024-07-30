@@ -26,6 +26,13 @@ public class GridSpawner : MonoBehaviour
                 // Instanciamos el objeto en la posición calculada y lo asignamos como hijo del objeto que contiene este script
                 GameObject spawnedObject = Instantiate(objectToSpawn, position, Quaternion.identity);
                 spawnedObject.transform.SetParent(transform);
+
+                // Configuramos el Order in Layer del SpriteRenderer según la fila
+                SpriteRenderer spriteRenderer = spawnedObject.GetComponent<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.sortingOrder = i + 1; // El Order in Layer se incrementa con cada fila
+                }
             }
         }
     }
