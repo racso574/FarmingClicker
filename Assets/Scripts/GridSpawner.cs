@@ -23,8 +23,9 @@ public class GridSpawner : MonoBehaviour
                 // Calculamos la posición para instanciar cada objeto
                 Vector2 position = new Vector2(startPosition.x + j * offset.x, startPosition.y - i * offset.y);
                 
-                // Instanciamos el objeto en la posición calculada
-                Instantiate(objectToSpawn, position, Quaternion.identity);
+                // Instanciamos el objeto en la posición calculada y lo asignamos como hijo del objeto que contiene este script
+                GameObject spawnedObject = Instantiate(objectToSpawn, position, Quaternion.identity);
+                spawnedObject.transform.SetParent(transform);
             }
         }
     }
