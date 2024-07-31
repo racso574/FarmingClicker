@@ -4,7 +4,7 @@ using UnityEngine;
 public class WheatController : MonoBehaviour
 {
     // Growth states
-    private int currentState;
+    public int currentState;
     public Sprite[] growthSprites; // Array to hold sprites for states 1, 2, and 3
     public GameObject juicyClickPrefab; // Prefab for the juicy click animation
 
@@ -55,7 +55,7 @@ public class WheatController : MonoBehaviour
         }
     }
 
-    private void Harvest()
+    public void Harvest()
     {
         // Harvesting logic
         PointsController.Instance?.AddPoint();
