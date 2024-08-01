@@ -462,12 +462,12 @@ TextureImporter:
       name: gamesprites_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 135
-        width: 30
-        height: 15
+        x: 75
+        y: 120
+        width: 45
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,9 +483,9 @@ TextureImporter:
       name: gamesprites_17
       rect:
         serializedVersion: 2
-        x: 45
+        x: 15
         y: 120
-        width: 30
+        width: 45
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -496,6 +496,174 @@ TextureImporter:
       bones: []
       spriteID: 4edde6007ba84db4c80c8199e34226f5
       internalID: 541125873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamesprites_18
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 75
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480c493b2930fa14f999373f5338d09c
+      internalID: 1231896584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamesprites_19
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 75
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c4abc2c81d64b41ad12149e85b15ff
+      internalID: 1270431037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamesprites_20
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 30
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b25819cde45bcb4497e552b8ae82888
+      internalID: 1523294831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamesprites_21
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 30
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c983522bb638a748ada6475e5ab1b5c
+      internalID: -720413898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamesprites_22
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 120
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ff5ed1dc7189543aed2e631c49a041
+      internalID: 1722551366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamesprites_23
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 120
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec31168cd2af5149a986b6712d2e8fc
+      internalID: -95552090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamesprites_24
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 75
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00ce423fcd06f5489fed57feb42ac8a
+      internalID: -1305395453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamesprites_25
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 75
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34686d686d434f44b97e8c4fa15dab29
+      internalID: -63208396
       vertices: []
       indices: 
       edges: []
@@ -521,7 +689,15 @@ TextureImporter:
       gamesprites_15: 2079848282
       gamesprites_16: 1430489192
       gamesprites_17: 541125873
+      gamesprites_18: 1231896584
+      gamesprites_19: 1270431037
       gamesprites_2: -2018978929
+      gamesprites_20: 1523294831
+      gamesprites_21: -720413898
+      gamesprites_22: 1722551366
+      gamesprites_23: -95552090
+      gamesprites_24: -1305395453
+      gamesprites_25: -63208396
       gamesprites_3: -491730654
       gamesprites_4: -421845592
       gamesprites_5: -199839543
