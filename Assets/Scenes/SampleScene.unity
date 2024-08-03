@@ -363,9 +363,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 369050011}
-        m_TargetAssemblyTypeName: BuyButtonController, Assembly-CSharp
-        m_MethodName: OnButtonClick
+      - m_Target: {fileID: 1375589716}
+        m_TargetAssemblyTypeName: GridSpawner, Assembly-CSharp
+        m_MethodName: ReduceGrowthDelay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

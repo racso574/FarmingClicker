@@ -9,6 +9,8 @@ public class GridSpawner : MonoBehaviour
     public int rows; // Número de filas en la cuadrícula
     public int columns; // Número de columnas en la cuadrícula
 
+    private List<GameObject> spawnedObjects = new List<GameObject>(); // Lista para almacenar los objetos instanciados
+
     void Start()
     {
         SpawnGrid();
@@ -33,6 +35,22 @@ public class GridSpawner : MonoBehaviour
                 {
                     spriteRenderer.sortingOrder = i + 1; // El Order in Layer se incrementa con cada fila
                 }
+
+                // Añadimos el objeto a la lista
+                spawnedObjects.Add(spawnedObject);
+            }
+        }
+    }
+
+    // Función para reducir el delay en todos los WheatControllers
+    public void ReduceGrowthDelay()
+    {
+        foreach (GameObject obj in spawnedObjects)
+        {
+            WheatController wheatController = obj.GetComponent<WheatController>();
+            if (wheatController != null)
+            {
+                wheatController.ReduceDelay();
             }
         }
     }

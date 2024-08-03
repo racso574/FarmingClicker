@@ -9,7 +9,9 @@ public class WheatController : MonoBehaviour
     public GameObject juicyClickPrefab; // Prefab for the juicy click animation
 
     private SpriteRenderer spriteRenderer;
-
+    public float currentDelay = 10f; // El delay actual, inicializado en 10 segundos
+    private const float minDelay = 4f; // El delay mínimo al que puede llegar
+    private float delayRest = 2f;
     void Start()
     {
         currentState = 0;
@@ -35,7 +37,7 @@ public class WheatController : MonoBehaviour
         {
             if (currentState < 3)
             {
-                float delay = Random.Range(1f, 10f); // Random delay between 1 and 10 seconds
+                float delay = Random.Range(1f, currentDelay); // Random delay between 1 and currentDelay seconds
                 yield return new WaitForSeconds(delay);
                 currentState++;
                 UpdateSprite();
@@ -66,5 +68,10 @@ public class WheatController : MonoBehaviour
 
         // Instanciar la animación
         Instantiate(juicyClickPrefab, transform.position, Quaternion.identity);
+    }
+
+    public void ReduceDelay()
+    {
+        currentDelay = Mathf.Max(minDelay, currentDelay - delayRest); // Reducir el delay sin bajar de minDelay
     }
 }

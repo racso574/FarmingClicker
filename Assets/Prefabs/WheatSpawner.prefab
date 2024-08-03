@@ -105,6 +105,8 @@ MonoBehaviour:
   - {fileID: -199839543, guid: 3c09b6f8ee3abb74bae57ba2cb5c752b, type: 3}
   - {fileID: 574738465, guid: 3c09b6f8ee3abb74bae57ba2cb5c752b, type: 3}
   juicyClickPrefab: {fileID: 1837747523441675583, guid: fc45d090be08ff14e89d74ad0c52251d, type: 3}
+  currentDelay: 10
+  delayRest: 1
 --- !u!58 &-8025130305019160931
 CircleCollider2D:
   m_ObjectHideFlags: 0
