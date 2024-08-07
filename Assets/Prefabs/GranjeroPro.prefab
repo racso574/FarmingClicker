@@ -144,6 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDistance: 11
-  speed: 1.5
+  speed: 1.1
   lineHeight: 1.11
   maxLines: 9

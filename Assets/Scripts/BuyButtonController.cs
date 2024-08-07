@@ -10,8 +10,8 @@ public class BuyButtonController : MonoBehaviour
     public long precioBoton; // Precio actual del botón
     public float factorIncremento = 1.15f; // Factor de incremento para el precio
     private int compraNumero = 0; // Contador de compras realizadas
-    public Sprite spriteActivo; // Sprite para el estado activo
-    public Sprite spriteInactivo; // Sprite para el estado inactivo
+    public Sprite sprite1; // Sprite para el estado activo e inactivo después de la primera compra
+    public Sprite sprite2; // Sprite para el estado inicial antes de la primera compra
     public Image botonImage; // Imagen del botón
     public TMP_Text textoPrecio; // Referencia al TextMeshPro del botón
     public Button boton; // Referencia al componente Button de Unity
@@ -19,11 +19,32 @@ public class BuyButtonController : MonoBehaviour
     public GameObject prefabToInstantiate; // Prefab que se va a instanciar
     public Transform instantiationPoint; // Punto de instanciación
 
+    public BuyButtonController botonReferencia; // Referencia a otro botón
+
+    private Color colorInactivo;
+    private bool nuncaComprable = true; // Indica si el botón nunca ha sido presionado
+    private bool referenciaComprada = false; // Indica si el botón de referencia ha sido comprado
+
     void Start()
     {
         // Inicializar el precio del botón
         precioBoton = baseCost;
         textoPrecio.text = precioBoton.ToString();
+
+        // Definir el color inactivo usando el valor hexadecimal exacto
+        ColorUtility.TryParseHtmlString("#B0B0B0", out colorInactivo);
+
+        // Configurar el estado inicial del botón
+        if (botonReferencia == null)
+        {
+            SetEstado(3); // Sin referencia, inicia en estado 3
+            referenciaComprada = true;
+
+        }
+        else
+        {
+            SetEstado(4); // Con referencia, inicia en estado 4
+        }
     }
 
     void Update()
@@ -31,18 +52,63 @@ public class BuyButtonController : MonoBehaviour
         // Obtener los puntos actuales del jugador
         long puntosActuales = PointsController.Instance.GetPoints();
 
-        // Verificar si los puntos actuales son suficientes para el precio del botón
-        if (puntosActuales >= precioBoton)
+        if (botonReferencia != null && botonReferencia.compraNumero > 0 && referenciaComprada == false )
         {
-            // Cambiar el sprite del botón al sprite activo y habilitar el botón
-            botonImage.sprite = spriteActivo;
-            boton.interactable = true;
+            referenciaComprada = true;
+            SetEstado(3);
         }
-        else
+
+        if (referenciaComprada == true){
+            if (puntosActuales >= precioBoton)
+            {
+                SetEstado(1); // Estado 1 si se puede comprar
+                nuncaComprable = false;
+            }
+            else
+            {
+                if (nuncaComprable)
+                {
+                    SetEstado(3);
+                }else{
+                    SetEstado(2);
+                }
+                
+            }
+            
+            
+        }
+
+        
+    }
+
+    private void SetEstado(int estado)
+    {
+        switch (estado)
         {
-            // Cambiar el sprite del botón al sprite inactivo y deshabilitar el botón
-            botonImage.sprite = spriteInactivo;
-            boton.interactable = false;
+            case 1:
+                botonImage.sprite = sprite1;
+                botonImage.color = new Color(1f, 1f, 1f, 1f); // Color normal
+                textoPrecio.text = precioBoton.ToString();
+                boton.interactable = true;
+                break;
+            case 2:
+                botonImage.sprite = sprite1;
+                botonImage.color = colorInactivo; // Color apagado
+                textoPrecio.text = precioBoton.ToString();
+                boton.interactable = false;
+                break;
+            case 3:
+                botonImage.sprite = sprite2;
+                botonImage.color = colorInactivo; // Color apagado
+                textoPrecio.text = precioBoton.ToString();
+                boton.interactable = false;
+                break;
+            case 4:
+                botonImage.sprite = sprite2;
+                botonImage.color = colorInactivo; // Color apagado
+                textoPrecio.text = "???";
+                boton.interactable = false;
+                break;
         }
     }
 
@@ -55,6 +121,7 @@ public class BuyButtonController : MonoBehaviour
 
             // Incrementar el contador de compras
             compraNumero++;
+            
 
             // Calcular el nuevo precio usando una fórmula exponencial con factor editable
             precioBoton = (long)(baseCost * Mathf.Pow(factorIncremento, compraNumero));
@@ -62,7 +129,7 @@ public class BuyButtonController : MonoBehaviour
             // Actualizar el texto del precio del botón
             textoPrecio.text = precioBoton.ToString();
 
-            // Instanciar el upgrade
+            // Instanciar la mejora (suponiendo que debería suceder al comprar)
             InstanciateUpgrade();
         }
     }
@@ -76,5 +143,3 @@ public class BuyButtonController : MonoBehaviour
         }
     }
 }
-
-
