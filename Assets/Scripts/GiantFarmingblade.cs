@@ -15,7 +15,7 @@ public class GiantFarmingblade : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("" + other);
+        
         // Verifica si el objeto con el que colisiona tiene el script WheatController
         WheatController wheat = other.GetComponent<WheatController>();
 

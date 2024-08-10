@@ -9,9 +9,11 @@ public class WheatController : MonoBehaviour
     public GameObject juicyClickPrefab; // Prefab for the juicy click animation
 
     private SpriteRenderer spriteRenderer;
-    public float currentDelay = 10f; // El delay actual, inicializado en 10 segundos
-    private const float minDelay = 4f; // El delay mínimo al que puede llegar
-    private float delayRest = 2f;
+    public float maxCurrentDelay = 10f; // El delay máximo actual, inicializado en 10 segundos
+    public float minCurrentDelay = 1f; // El delay mínimo actual, inicializado en 1 segundo
+    private const float minDelay = 1f; // El delay mínimo al que puede llegar
+    private float delayRest = 1f; // El decremento para el delay máximo y mínimo
+
     void Start()
     {
         currentState = 0;
@@ -37,7 +39,7 @@ public class WheatController : MonoBehaviour
         {
             if (currentState < 3)
             {
-                float delay = Random.Range(1f, currentDelay); // Random delay between 1 and currentDelay seconds
+                float delay = Random.Range(minCurrentDelay, maxCurrentDelay); // Random delay between minCurrentDelay and maxCurrentDelay seconds
                 yield return new WaitForSeconds(delay);
                 currentState++;
                 UpdateSprite();
@@ -72,6 +74,14 @@ public class WheatController : MonoBehaviour
 
     public void ReduceDelay()
     {
-        currentDelay = Mathf.Max(minDelay, currentDelay - delayRest); // Reducir el delay sin bajar de minDelay
+        // Reduce both min and max delays proportionally
+        maxCurrentDelay = Mathf.Max(minDelay, maxCurrentDelay - delayRest);
+        minCurrentDelay = Mathf.Max(0.1f, minCurrentDelay - (delayRest * (minCurrentDelay / maxCurrentDelay))); // Mantener la proporción adecuada
+        
+        // Asegurarse de que minCurrentDelay nunca sea mayor que maxCurrentDelay
+        if (minCurrentDelay > maxCurrentDelay)
+        {
+            minCurrentDelay = maxCurrentDelay;
+        }
     }
 }

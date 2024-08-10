@@ -82,35 +82,40 @@ public class BuyButtonController : MonoBehaviour
     }
 
     private void SetEstado(int estado)
+{
+    switch (estado)
     {
-        switch (estado)
-        {
-            case 1:
-                botonImage.sprite = sprite1;
-                botonImage.color = new Color(1f, 1f, 1f, 1f); // Color normal
-                textoPrecio.text = precioBoton.ToString();
-                boton.interactable = true;
-                break;
-            case 2:
-                botonImage.sprite = sprite1;
-                botonImage.color = colorInactivo; // Color apagado
-                textoPrecio.text = precioBoton.ToString();
-                boton.interactable = false;
-                break;
-            case 3:
-                botonImage.sprite = sprite2;
-                botonImage.color = colorInactivo; // Color apagado
-                textoPrecio.text = precioBoton.ToString();
-                boton.interactable = false;
-                break;
-            case 4:
-                botonImage.sprite = sprite2;
-                botonImage.color = colorInactivo; // Color apagado
-                textoPrecio.text = "???";
-                boton.interactable = false;
-                break;
-        }
+        case 1:
+            botonImage.sprite = sprite1;
+            botonImage.color = new Color(1f, 1f, 1f, 1f); // Color normal
+            textoPrecio.text = precioBoton.ToString();
+            textoPrecio.color = new Color(1f, 1f, 1f, 1f); // Color del texto normal
+            boton.interactable = true;
+            break;
+        case 2:
+            botonImage.sprite = sprite1;
+            botonImage.color = colorInactivo; // Color apagado
+            textoPrecio.text = precioBoton.ToString();
+            textoPrecio.color = colorInactivo; // Aplicar el mismo color apagado al texto
+            boton.interactable = false;
+            break;
+        case 3:
+            botonImage.sprite = sprite2;
+            botonImage.color = colorInactivo; // Color apagado
+            textoPrecio.text = precioBoton.ToString();
+            textoPrecio.color = colorInactivo; // Aplicar el mismo color apagado al texto
+            boton.interactable = false;
+            break;
+        case 4:
+            botonImage.sprite = sprite2;
+            botonImage.color = colorInactivo; // Color apagado
+            textoPrecio.text = "???";
+            textoPrecio.color = colorInactivo; // Aplicar el mismo color apagado al texto
+            boton.interactable = false;
+            break;
     }
+}
+
 
     public void OnButtonClick()
     {

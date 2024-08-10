@@ -7,7 +7,7 @@ public class PointsController : MonoBehaviour
     public static PointsController Instance { get; private set; }
 
     // A variable to store the points
-    private long points;
+    public long points;
 
     // Event to notify listeners about points changes
     public static event Action OnPointsChanged;

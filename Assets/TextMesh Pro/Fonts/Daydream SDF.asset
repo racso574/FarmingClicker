@@ -2231,9 +2231,9 @@ MonoBehaviour:
     packingMode: 0
     atlasWidth: 512
     atlasHeight: 512
-    characterSetSelectionMode: 0
-    characterSequence: 32 - 126, 160, 8203, 8230, 9633
-    referencedFontAssetGUID: 
+    characterSetSelectionMode: 6
+    characterSequence: 20-5A,5C,5F,61-7A
+    referencedFontAssetGUID: debe34ac0543d82408c5b41579455f5e
     referencedTextAssetGUID: 
     fontStyle: 0
     fontStyleModifier: 0
@@ -2299,8 +2299,8 @@ Texture2D:
   m_TextureDimension: 2
   m_TextureSettings:
     serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
+    m_FilterMode: 0
+    m_Aniso: 0
     m_MipBias: 0
     m_WrapU: 0
     m_WrapV: 0

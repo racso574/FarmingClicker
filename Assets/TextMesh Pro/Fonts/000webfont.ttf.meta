@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: afc9d4ff6ece1214c96645e5b1f26e64
+guid: 8c4fe221b0f4a7346a63a3120b2d0b0e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 300
-  forceTextureCase: -1
+  fontSize: 16
+  forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Daydream
+  - 000webfont
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 2
+  fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

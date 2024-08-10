@@ -41,7 +41,7 @@ public class FarmerController : MonoBehaviour
             lineCount++;
 
             // Debug log para verificar el conteo de líneas
-            Debug.Log("Line count: " + lineCount);
+            
 
             // Reinicia la posición después de alcanzar el número máximo de líneas
             if (lineCount >= maxLines)
@@ -53,7 +53,7 @@ public class FarmerController : MonoBehaviour
                 lineCount = 0;
 
                 // Debug log para confirmar el reinicio
-                Debug.Log("Resetting position and direction after reaching max lines.");
+                
             }
         }
     }
@@ -61,7 +61,7 @@ public class FarmerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Debug log para detección de colisiones
-        Debug.Log("Collided with: " + other);
+        
 
         // Verifica si el objeto con el que colisiona tiene el script WheatController
         WheatController wheat = other.GetComponent<WheatController>();
