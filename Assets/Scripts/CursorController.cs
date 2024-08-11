@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CursorController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class CursorController : MonoBehaviour
     [SerializeField]
     private float rotationDuration = 0.2f; // Duración de la rotación en segundos
 
+    public UnityEvent audioTrigger; // UnityEvent para activar eventos de audio
+
     private Coroutine rotationCoroutine;
     private Quaternion initialRotation;
 
@@ -19,7 +22,6 @@ public class CursorController : MonoBehaviour
     {
         // Ocultar completamente el cursor del sistema
         Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Confined; // Confina el cursor al juego
 
         // Guardar la rotación inicial del objeto
         initialRotation = transform.rotation;
@@ -52,6 +54,9 @@ public class CursorController : MonoBehaviour
                 transform.rotation = initialRotation;
             }
             rotationCoroutine = StartCoroutine(RotateCursor());
+
+            // Invocar el UnityEvent cuando el cursor rota
+            audioTrigger?.Invoke();
         }
     }
 
